@@ -9,10 +9,10 @@ const ContactList = ({ contacts, onDelete }) => {
   return (
     <div>
       <ul className={s.list}>
-        {contacts.map(({ name, number, id }) => (
+        {contacts.map(({ userName, number, id }) => (
           <li className={s.item} key={id}>
             <p className={s.text}>
-              {name} <span className={s.tel}>Tel: {number}</span>{' '}
+              {userName} <span className={s.tel}>Tel: {number}</span>{' '}
             </p>
             <button
               className={s.btn}
@@ -31,7 +31,7 @@ const ContactList = ({ contacts, onDelete }) => {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      userName: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
